@@ -1,0 +1,26 @@
+# Archivos binarios y ejecutables
+*.exe
+*.o
+*.out
+
+# Archivos de dependencias y bibliotecas
+node_modules/
+vendor/
+
+# Archivos de caché y compilación
+.cache/
+.build/
+.dist/
+dist/
+tmp/
+
+# Archivos de entorno y configuración local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Otros archivos generados automáticamente
+.DS_Store
+Thumbs.db

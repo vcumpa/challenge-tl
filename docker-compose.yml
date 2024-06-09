@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  go-qr-api:
+    build:
+      context: ./go-qr-api
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  node-matrix-api:
+    build:
+      context: ./node-matrix-api
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+  matrix-app:
+    build:
+      context: ./matrix-app
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_GO_API_URL=http://localhost:8080/api
+      - REACT_APP_NODE_API_URL=http://localhost:3001/api
+
+networks:
+  app-network:
+    driver: bridge
